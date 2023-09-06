@@ -19,11 +19,8 @@ class LoginPageLocators():
 
 
 class ProductPageLocators():
-    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, 'button[value="Add to basket"]')
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, 'form[id="add_to_basket_form"]')
     NAME_OF_PRODUCT = (By.XPATH, "//div/h1")
-
-    # NAME_OF_PRODUCT = (
-    #     By.CSS_SELECTOR, 'div[class="col-sm-6 product_main"]:nth-child(1)')
     NAME_OF_ADDED_PRODUCT = (By.XPATH, '//div/div/div/div/strong')
     PRICE_OD_ADDED_BOOK = (By.XPATH, '//div/div/div/div/article/div/div/p')
     PRICE_OD_ADDED_BOOK_IN_BASKET = (
