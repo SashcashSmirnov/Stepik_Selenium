@@ -8,6 +8,7 @@ class BasePageLocators():
     BASKET_TEXT_EMPTY = (By.XPATH, '//div/div/div/div/p')
     BASKET_ITEM = (By.CSS_SELECTOR, ".basket-items .row")
     ALERT = (By.CSS_SELECTOR, "div#content_inner p")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
 class LoginPageLocators():

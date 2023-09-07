@@ -1,4 +1,4 @@
-
+import random
 import time
 import math
 import pytest
@@ -28,3 +28,14 @@ class LoginPage(BasePage):
     def should_be_register_form(self):
         assert self.is_element_present(
             *LoginPageLocators.REGISTRATION_FORM) is True, 'Registration form does not exist'
+
+    def register_new_user(self, email, password):
+        reg_email = self.browser.find_element(
+            *LoginPageLocators.REGISTER_EMAIL)
+        reg_email.send_keys(email)
+        reg_pswd = self.browser.find_element(*LoginPageLocators.REGISTER_PSWD)
+        reg_pswd.send_keys(password)
+        cnfrm_pswd = self.browser.find_element(
+            *LoginPageLocators.REGISTER_PSWD_CONFIRM)
+        cnfrm_pswd.send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON).click()
