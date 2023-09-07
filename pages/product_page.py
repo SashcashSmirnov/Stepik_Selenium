@@ -1,7 +1,5 @@
 from pages.base_page import BasePage
 from .locators import ProductPageLocators
-import time
-import pytest
 
 
 class ProductPage(BasePage):
