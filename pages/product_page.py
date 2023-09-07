@@ -1,16 +1,7 @@
 from pages.base_page import BasePage
-from pages.login_page import LoginPage
-from .locators import MainPageLocators
 from .locators import ProductPageLocators
 import time
-import math
 import pytest
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class ProductPage(BasePage):
@@ -30,9 +21,17 @@ class ProductPage(BasePage):
 
     def check_price_of_added_product(self):
         added_product_price = self.browser.find_element(
-            *ProductPageLocators.PRICE_OD_ADDED_BOOK).text
+            *ProductPageLocators.PRICE_OF_ADDED_BOOK).text
         print(added_product_price)
         basket_product_price = self.browser.find_element(
-            *ProductPageLocators.PRICE_OD_ADDED_BOOK_IN_BASKET).text
+            *ProductPageLocators.PRICE_OF_ADDED_BOOK_IN_BASKET).text
         print(basket_product_price)
         assert added_product_price == basket_product_price, "Price of added book in basket does not match"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message should not disappear"
+
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message should disappear"

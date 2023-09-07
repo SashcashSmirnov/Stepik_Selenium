@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
 
 class LoginPageLocators():
@@ -22,6 +23,7 @@ class ProductPageLocators():
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, 'form[id="add_to_basket_form"]')
     NAME_OF_PRODUCT = (By.XPATH, "//div/h1")
     NAME_OF_ADDED_PRODUCT = (By.XPATH, '//div/div/div/div/strong')
-    PRICE_OD_ADDED_BOOK = (By.XPATH, '//div/div/div/div/article/div/div/p')
-    PRICE_OD_ADDED_BOOK_IN_BASKET = (
+    PRICE_OF_ADDED_BOOK = (By.XPATH, '//div/div/div/div/article/div/div/p')
+    PRICE_OF_ADDED_BOOK_IN_BASKET = (
         By.XPATH, '//div/div/div/div/div/p/strong')
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")

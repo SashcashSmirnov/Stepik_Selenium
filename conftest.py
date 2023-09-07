@@ -21,6 +21,6 @@ def browser(request):
     options.add_experimental_option(
         'prefs', {'intl.accept_languages': language})
     driver = webdriver.Chrome(service=service, options=options)
-    driver.implicitly_wait(100)
+    # driver.implicitly_wait(100)
     yield driver
     driver.quit()
