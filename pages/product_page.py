@@ -8,6 +8,12 @@ class ProductPage(BasePage):
             *ProductPageLocators.ADD_TO_BASKET_BUTTON)
         add_product.click()
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADD_TO_BASKET_SUCCESS_MESSAGE), "Success message is presented, but should not be"
+        
+    def success_message_should_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.ADD_TO_BASKET_SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
     def check_name_of_added_product(self):
         added_product = self.browser.find_element(
             *ProductPageLocators.NAME_OF_PRODUCT).text
@@ -23,9 +29,9 @@ class ProductPage(BasePage):
         assert added_product_price == basket_product_price, "Price of added book in basket does not match"
 
     def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+        assert self.is_not_element_present(*ProductPageLocators.ADD_TO_BASKET_SUCCESS_MESSAGE), \
             "Success message should not disappear"
 
     def should_disappear_success_message(self):
-        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+        assert self.is_disappeared(*ProductPageLocators.ADD_TO_BASKET_SUCCESS_MESSAGE), \
             "Success message should disappear"

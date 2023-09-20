@@ -31,4 +31,4 @@ class ProductPageLocators():
     PRICE_OF_ADDED_BOOK = (By.XPATH, '//div/div/div/div/article/div/div/p')
     PRICE_OF_ADDED_BOOK_IN_BASKET = (
         By.XPATH, '//div/div/div/div/div/p/strong')
-    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
+    ADD_TO_BASKET_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
